@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Meteo</title>
+  </head>
+  <body>
+    <script>
+      fetch('https://api.openweathermap.org/data/2.5/weather?q=Rennes&lang=fr&units=metric&appid=dfaee76e889bd1d232719d5b18c12009',{
+        mode: 'cors'
+      })
+        .then(res => res.json())
+        .then(resJson => console.log(resJson.main.temp))
+
+        var tempe = document.getElementById("temp");
+        tempe += resJson(main.temp);
+
+
+    </script>
+    <div id="root">
+      
+      <p>Temperature: <span id="temp"></span>
+
+    </div>
+  </body>
+</html>

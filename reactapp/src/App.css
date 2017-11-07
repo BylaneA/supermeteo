@@ -4,21 +4,10 @@
 
 
 .App-intro {
-  background-color: grey;
+  background-color: black;
   height: 150px;
   padding: 20px;
   color: white;
   font-size: large;
 }
 
-.City{
-  background-color: black;
-  height: 50%;
-  color: white;
-}
-
-.Temp{
-  background-color: darkred;
-  height: 50%;
-  color: white;
-}

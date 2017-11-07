@@ -12,8 +12,7 @@ class App extends Component {
       };
       this.goToThisCity = this.goToThisCity.bind(this);
       this.fonctionQuiFetch = this.fonctionQuiFetch.bind(this)
-    }
-
+  }
 
   fonctionQuiFetch() {
     fetch("https://api.openweathermap.org/data/2.5/weather?q="+this.state.city+"&lang=fr&units=metric&appid=dfaee76e889bd1d232719d5b18c12009",{
@@ -26,16 +25,18 @@ class App extends Component {
           this.setState({temp});
         });
   }
+
   componentWillMount() {
       this.fonctionQuiFetch();
   }
+
   goToThisCity(event) {
     event.preventDefault();
     const city = this.cityInput.value;
 
-    this.setState({city});
-    this.fonctionQuiFetch();
+    this.setState({city}, () => this.fonctionQuiFetch());
   };
+
   render() {
 
     return (
@@ -49,6 +50,10 @@ class App extends Component {
             <button type="submit">Let's see</button>
 
           </form> 
+
+          <div className="City">
+            {this.state.city}
+          </div>
 
           <div className="Temperature">
             {this.state.temp}

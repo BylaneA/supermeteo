@@ -7,16 +7,20 @@ class App extends Component {
   constructor() {
     super ();
       this.state = {
-        city: [],
+        city: 'Rennes',
+        temp: ''
       };
     }
 
     componentWillMount() {
-    return fetch('https://api.openweathermap.org/data/2.5/weather?q=Rennes&lang=fr&units=metric&appid=dfaee76e889bd1d232719d5b18c12009',{
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Rennes&lang=fr&units=metric&appid=dfaee76e889bd1d232719d5b18c12009',{
         mode: 'cors'
       })
         .then(res => res.json())
-        .then(resJson => console.log(resJson))
+        .then(data => {
+          const temp = data.main.temp;
+          this.setState({temp});
+        });
     }
   
   render() {
@@ -24,7 +28,14 @@ class App extends Component {
     return (
 
         <div className="App-intro"> 
-          {this.state.city}
+
+          <div className="City">
+            {this.state.city}
+          </div>
+
+          <div className= "Temp">
+            {this.state.temp}
+          </div>
         </div>
 
     );

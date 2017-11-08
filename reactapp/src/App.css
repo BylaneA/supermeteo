@@ -1,13 +1,78 @@
-.App {
-  text-align: center;
-}
-
-
 .App-intro {
-  background-color: black;
-  height: 150px;
+  background-image:url('ciel.jpg');
+  height: 613px;
   padding: 20px;
   color: white;
   font-size: large;
 }
 
+.Container {
+  box-shadow: -4px 3px 7px 4px rgba(0, 0, 0, 0.7); 
+  position: absolute; 
+  display: flex;
+  top: 25%; left: 25%; 
+  width: 50%;
+  height: 300px;
+}
+
+.Infos {
+  background-color: black;
+  border-right: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+}
+
+.Ville {
+  font-size: 34px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.Pays {
+  font-size: 24px;
+  text-align: right;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.Temp {
+  font-size: 54px;
+  text-align: right;
+  text-align: center;
+  flex: 2;
+}
+
+.Date {
+  font-size: 24px;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.Infos2 {
+  background-color: black;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Text {
+  margin-top: 20px; 
+  font-size: 44px;
+  text-align: center;
+  flex: 4;
+}
+
+.Min {
+  font-size: 24px;
+  text-align: center;
+  flex: 2;
+}
+
+.Max {
+  font-size: 24px;
+  text-align: center;
+  flex: 2;
+}
